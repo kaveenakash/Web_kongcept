@@ -13,7 +13,10 @@ const db = mysql.createPool({
 app.get("/", (req, res) => {
 
      
- 
+  const sql="select e.emp_id,emp_name,emp_email,emp_photo,br.branch_name,b.bank_name from Bank b,Employee e,bank_branch br where b.bank_id = br.bank_id and br.branch_id = e.branch_id";
+  db.query(sql, (err, result) => {
+    res.send(result);
+  });
 });
 
 app.listen(3001, () => {
