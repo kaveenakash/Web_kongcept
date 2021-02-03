@@ -1,10 +1,21 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
 
-app.get('/',(req,res) =>{
-    res.send("Hello");
-})
+const mysql = require("mysql");
 
-app.listen(3001,() =>{
-    console.log("Running on port 3001")
-})
+const db = mysql.createPool({
+  host: "localhost",
+  user: "root",
+  password: "#Maniya225",
+  database: "kongcept",
+});
+ 
+app.get("/", (req, res) => {
+
+     
+ 
+});
+
+app.listen(3001, () => {
+  console.log("Running on port 3001");
+});
